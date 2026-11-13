@@ -1,0 +1,475 @@
+/* ===================================================
+   Tokens
+=================================================== */
+:root {
+  --paper: #F3F1EA;
+  --ink: #1C1B17;
+  --accent: #5C6F5A;      /* patina / oxidised bronze */
+  --line: #D9D4C6;
+  --muted: #8B8674;
+
+  --font-display: "Poppins", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-name: "Poppins", sans-serif; /* used only for the artist's name */
+
+  --max-width: 1100px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #17160F;
+    --ink: #EDEAE0;
+    --accent: #8FAE8A;
+    --line: #322F26;
+    --muted: #938E7C;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ===================================================
+   Header / Nav
+=================================================== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem var(--gutter);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  z-index: 10;
+}
+
+.header-name {
+  font-family: var(--font-name);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.site-nav {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.25rem);
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  border-color: var(--accent);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .site-nav.is-open {
+    max-height: 260px;
+  }
+
+  .site-nav a {
+    padding: 1rem var(--gutter);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+/* ===================================================
+   Hero
+=================================================== */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 10vw, 7rem) var(--gutter) clamp(3rem, 8vw, 5rem);
+  animation: hero-in 0.7s ease both;
+}
+
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title {
+  font-family: var(--font-name);
+  font-weight: 600;
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  /*max-width: 14ch;*/
+}
+
+.hero-caption {
+  margin-top: 1.75rem;
+  /*max-width: 46ch;*/
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+/* ===================================================
+   Sections
+=================================================== */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(3rem, 7vw, 5rem) var(--gutter);
+  border-top: 1px solid var(--line);
+}
+
+.section-alt {
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+/* ---- Sommaire : Œuvres / Activités de recherches / CV ---- */
+.index-links {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.index-link {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  padding: clamp(1.75rem, 5vw, 2.75rem) var(--gutter);
+  border-bottom: 1px solid var(--line);
+  transition: color 0.15s ease, padding-left 0.2s ease;
+}
+
+.index-link h2 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+}
+
+.index-link:hover,
+.index-link:focus-visible {
+  color: var(--accent);
+  padding-left: calc(var(--gutter) + 0.5rem);
+}
+
+/* ---- Contact ---- */
+.contact-form {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.field input,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.7rem 0.8rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 2px;
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  border-color: var(--accent);
+}
+
+.submit-btn {
+  align-self: flex-start;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.submit-btn:hover,
+.submit-btn:focus-visible {
+  opacity: 0.85;
+}
+
+.form-status {
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  color: var(--accent);
+}
+
+/* ===================================================
+   Galerie (page Œuvres)
+=================================================== */
+/* Row-based flow: items wrap left-to-right, top-to-bottom, like justified text.
+   No images are pre-sorted into fixed columns, so a shorter item never leaves
+   an empty gap below it the way a strict 3-column layout can. */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter);
+}
+
+.gallery-item {
+  margin: 0;
+  flex: 1 1 calc((100% - 2 * var(--gutter)) / 3); /* ~3 per row */
+}
+
+.gallery-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  line-height: 0; /* removes inline-image gap under the img */
+  transition: opacity 0.15s ease;
+}
+
+.gallery-trigger:hover,
+.gallery-trigger:focus-visible {
+  opacity: 0.85;
+}
+
+.gallery-trigger img {
+  display: block;
+  width: 100%;
+  height: auto; /* keeps each picture's own aspect ratio, no cropping */
+}
+
+/* An artwork with several photos: shown side by side in their own columns,
+   sharing the single figcaption below (see the HTML comment for how to add one). */
+.gallery-item-images {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.gallery-item-images .gallery-trigger {
+  flex: 1 1 0;
+  min-width: 0; /* lets flex children shrink below their image's intrinsic width */
+}
+
+@media (max-width: 480px) {
+  .gallery-item-images {
+    flex-direction: column;
+  }
+}
+
+.gallery-caption {
+  margin-top: 0.6rem;
+}
+
+.gallery-caption p {
+  margin: 0;
+}
+
+.caption-title {
+  font-size: 0.95rem;
+}
+
+.caption-title em {
+  font-style: italic;
+}
+
+.caption-desc {
+  margin-top: 0.2rem !important;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .gallery-item {
+    flex-basis: calc((100% - var(--gutter)) / 2); /* ~2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-item {
+    flex-basis: 100%; /* 1 per row */
+  }
+}
+
+/* ---- Lightbox ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(15, 14, 10, 0.92);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: clamp(1rem, 4vw, 2rem);
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--paper);
+  font-size: 0.9rem;
+  padding: 0 1.5rem;
+}
+
+.lightbox-caption:empty {
+  display: none;
+}
+
+.lightbox-caption .caption-desc {
+  color: rgba(243, 241, 234, 0.75);
+  margin-top: 0.2rem;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(243, 241, 234, 0.4);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--paper);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  background: rgba(243, 241, 234, 0.12);
+}
+
+/* ===================================================
+   Footer
+=================================================== */
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem var(--gutter) 3rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}

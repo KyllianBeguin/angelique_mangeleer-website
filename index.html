@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angélique Mangeleer — Artiste plasticienne &amp; chercheuse</title>
+  <meta name="description" content="Site personnel d'Angélique Mangeleer, artiste plasticienne et chercheuse en arts plastiques.">
+
+  <!-- Fonts: Fraunces (display/serif) for personality, Work Sans (sans) for body/UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Poppins : utilisée uniquement pour le nom de l'artiste -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ====== HEADER / NAV ====== -->
+  <header class="site-header">
+    <a class="header-name" href="#top">Angélique Mangeleer</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="oeuvres.html">Œuvres</a>
+      <a href="recherche.html">Activités de recherches</a>
+      <a href="cv.html">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ====== HERO ====== -->
+    <section class="hero">
+      <h1 class="hero-title">Angélique Mangeleer</h1>
+      <p class="hero-caption">
+        Actuellement doctorante au sein du laboratoire PTAC (Pratiques et Théorie en Art Contemporain)<br />
+	Thèse en Recherche & Création sous la direction de Marie-Noëlle Semet-Haviaras :<br />
+	« Fictions objectales, de la narration produite par les objets mis en scène dans des installations contemporaines »<br />
+	Enseignante vacataire à l'Université Rennes 2 depuis 2021 (Pratiques du dessin, scénographie, création plastique, exposition de la recherche, workshops)
+        <!-- TODO : remplacez cette phrase par la véritable accroche d'Angélique. -->
+      </p>
+    </section>
+
+    <!-- ====== SOMMAIRE : les 3 sous-titres, chacun renvoie vers sa propre page ====== -->
+    <nav class="index-links" aria-label="Sections du site">
+      <a class="index-link" href="oeuvres.html">
+        <h2>Œuvres</h2>
+      </a>
+      <a class="index-link" href="recherche.html">
+        <h2>Activités de recherches</h2>
+      </a>
+      <a class="index-link" href="cv.html">
+        <h2>CV</h2>
+      </a>
+      <a class="index-link" href="contact.html">
+        <h2>Contact</h2>
+      </a>
+    </nav>
+
+    <!-- ====== CONTACT ====== -->
+    <!--
+    <section id="contact" class="section section-alt">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p class="section-intro">Une question, une proposition d'exposition ou de collaboration ? Écrivez-lui.</p>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Envoyer le message</button>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    -->
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Angélique Mangeleer</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

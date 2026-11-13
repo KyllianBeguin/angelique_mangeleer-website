@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Œuvres — Angélique Mangeleer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="header-name" href="index.html">Angélique Mangeleer</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="oeuvres.html">Œuvres</a>
+      <a href="recherche.html">Activités de recherches</a>
+      <a href="cv.html">CV</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-head">
+        <h2>Œuvres</h2>
+      </div>
+
+      <!--
+        GALERIE — comment l'utiliser :
+        - Les œuvres s'enchaînent simplement les unes après les autres, dans l'ordre
+          où vous les écrivez ici : elles se placent automatiquement en ligne (3 par
+          ligne sur grand écran, 2 puis 1 sur petit écran) et passent à la ligne
+          suivante quand il n'y a plus de place. Pas besoin de les répartir
+          "à la main" dans des colonnes — ça évite les espaces vides en bas d'une
+          colonne trop courte.
+        - Chaque œuvre est un bloc <figure class="gallery-item"> avec UNE SEULE légende,
+          même si elle contient plusieurs photos.
+
+        → Œuvre avec UNE SEULE photo :
+            <figure class="gallery-item">
+              <button class="gallery-trigger" type="button">
+                <img src="images/NOM-DU-FICHIER.jpg" alt="...">
+              </button>
+              <figcaption class="gallery-caption">...</figcaption>
+            </figure>
+
+        → Œuvre avec PLUSIEURS photos (ex. deux vues de la même pièce) :
+            on ajoute juste "gallery-item--multi" sur le <figure>, et on met
+            chaque photo (bouton .gallery-trigger) dans un conteneur
+            <div class="gallery-item-images"> : elles s'affichent côte à côte
+            en colonnes, avec une seule légende commune en dessous.
+            (voir l'exemple "Bibidi Bobidi Bou !" ci-dessous — 2 photos, 1 légende)
+
+        - Remplacez src="images/NOM-DU-FICHIER.jpg" par le vrai nom de fichier
+          (placez les fichiers dans un dossier "images/" à côté de ce fichier html).
+        - alt="..." doit décrire l'image (accessibilité + référencement).
+        - La légende (figcaption) suit toujours le même format :
+            ligne 1 → Titre (italique), date
+            ligne 2 → courte description / matériaux
+        - Cliquer sur une image l'ouvre en grand (avec sa légende) ;
+          clic sur la croix ou en dehors de l'image referme.
+      -->
+      <div class="gallery" id="gallery">
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/expositions/chaudfroid.jpg" alt="Exposition Chaudfroid">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title">Vue de l'exposition <em>Chaudfroid</em>, octobre 2025</p>
+            <p class="caption-desc">Espace Tokonoma, Rennes</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/nostalgie_de_la_nostagie_1.jpg" alt="Nostalgie de la nostalgie">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Nostalgie de la nostalgie</em>, 2025</p>
+	    <p class="caption-desc">Bocal, boule à neige, neige artificielle, bol<br />
+	    Espace Tokonoma, Rennes<br />
+	    Vue de l’exposition <em>Chaudfroid</em></p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/feu_interieur.jpg" alt="Feu intérieur">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Feu intérieur</em>, 2025</p>
+	    <p class="caption-desc">Tente et leds<br />
+	    Espace Tokonoma, Rennes<br />
+	    Vue de l’exposition <em>Chaudfroid</em></p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/bibidi_bobidi_bou_1.jpg" alt="Bibidi Bobidi Bou !, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/bibidi_bobidi_bou_2.jpg" alt="Bibidi Bobidi Bou !, vue 2">
+            </button>
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Bibidi Bobidi Bou !</em>, 2025</p>
+            <p class="caption-desc">Horloge, marteau, chaîne</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/mon_jardin_secret.jpg" alt="Mon jardin secret">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Mon jardin secret</em>, 2023</p>
+	    <p class="caption-desc">Compositions florales funéraires<br />
+	    Galerie Awen, Rennes</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/servir_chaud.jpg" alt="Servir chaud">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Servir chaud</em>, 2023</p>
+	    <p class="caption-desc">Extensions capillaires, cloche à dessert<br />
+	    Galerie Awen, Rennest</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/sephora_1.jpg" alt="Séphora, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/sephora_2.jpg" alt="Séphora, vue 2">
+            </button>
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Séphora</em>, 2022</p>
+            <p class="caption-desc">Perdrix empaillée, laisse, collier</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/souffle_1.jpg" alt="Souffle, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/souffle_2.jpg" alt="Souffle, vue 2">
+            </button>
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Souffle</em>, 2023</p>
+            <p class="caption-desc">Sèche-cheveux, facettes dentaires, argile, peinture, vernis</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/la_grappe_1.jpg" alt="La grappe, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/la_grappe_2.jpg" alt="La grappe, vue 2">
+            </button>
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>La grappe</em>, 2022</p>
+            <p class="caption-desc">Raisin artificiel, yeux pour poupée</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/nostalgie_de_la_nostagie_2.jpg" alt="Nostalgie de la nostalgie">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Nostalgie de la nostalgie</em>, 2021</p>
+            <p class="caption-desc">Boule à neige, aquarium, polystyrène</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/nostalgie_de_la_nostagie_3.jpg" alt="Nostalgie de la nostalgie">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Nostalgie de la nostalgie</em>, 2025</p>
+            <p class="caption-desc">Boule à neige, aquarium, polystyrène</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/la_cage_aux_folles_1.jpg" alt="La cage aux folles, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/la_cage_aux_folles_2.jpg" alt="La cage aux folles, vue 2">
+            </button>
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>La cage aux folles</em>, 2024</p>
+            <p class="caption-desc">Cage à oiseaux, plumes, papier, colle</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/prete_a_consommer.jpg" alt="Prête à consommer">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Prête à consommer</em>, 2021</p>
+            <p class="caption-desc">Gigot en plastique, collant en résine</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/zone_autorisee_1.jpg" alt="Zone autorisée, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/zone_autorisee_2.jpg" alt="Zone autorisée, vue 2">
+            </button>
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Zone autorisée</em>, 2022-2023</p>
+            <p class="caption-desc">Banderole</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/boites_a_larmes_1.jpg" alt="Boîtes à larmes, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/boites_a_larmes_2.jpg" alt="Boîtes à larmes, vue 2">
+            </button>
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Boîtes à larmes</em>, 2023</p>
+            <p class="caption-desc">Sèche-cheveux, facettes dentaires, argile, peinture, vernis</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/fictions_postales_1.jpg" alt="Fictions postales, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/fictions_postales_2.jpg" alt="Fictions postales, vue 2">
+            </button>
+	    <!--
+            <button class="gallery-trigger" type="button">
+              <img src="images/fictions_postales_3.jpg" alt="Fictions postales, vue 2">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/fictions_postales_4.jpg" alt="Fictions postales, vue 2">
+            </button>
+	    -->
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Fictions postales</em>, 2025</p>
+            <p class="caption-desc">Cartes postales, scotch</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/fictions_postales_3.jpg" alt="Prête à consommer">
+          </button>
+        </figure>
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/fictions_postales_4.jpg" alt="Prête à consommer">
+          </button>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/mes_enfants_cheris_2.jpg" alt="Mes enfants chéris, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/mes_enfants_cheris_3.jpg" alt="Mes enfants chéris, vue 2">
+            </button>
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Mes enfants chéris</em>, 2020</p>
+	    <p class="caption-desc">Pâte à sel, emballage cadeau<br />
+	    Galerie Henri Cornat</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/mes_enfants_cheris_4.jpg" alt="L'accident">
+          </button>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/mes_enfants_cheris_1.jpg" alt="L'accident">
+          </button>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/l_accident.jpg" alt="L'accident">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>L'accident</em>, 2025</p>
+	    <p class="caption-desc">Pneu<br />
+	    Galerie Awen, Rennes</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/communication_coupee_1.jpg" alt="Communication coupée, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/communication_coupee_2.jpg" alt="Communication coupée, vue 2">
+            </button>
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Communication coupée</em>, 2021</p>
+            <p class="caption-desc">Téléphone à cadran, journal, couvercle, monnaie</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/danse_avec_moi.jpg" alt="Danse avec moi">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Danse avec moi</em>, 2021</p>
+	    <p class="caption-desc">Chaussons de danse<br />
+	    Galerie Awen, Rennes</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/skinhead.jpg" alt="Skinhead">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Skinhead</em>, 2017</p>
+	    <p class="caption-desc">Collants, dentelle, fil</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/varicelle.jpg" alt="Varicelle">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Varicelle</em>, 2016</p>
+	    <p class="caption-desc">Tapis</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="images/split_2.jpg" alt="Split">
+          </button>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Split</em>, 2017</p>
+	    <p class="caption-desc">Tapis</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--multi">
+          <div class="gallery-item-images">
+            <button class="gallery-trigger" type="button">
+              <img src="images/stigmates_1.jpg" alt="Stigmates, vue 1">
+            </button>
+            <button class="gallery-trigger" type="button">
+              <img src="images/stigmates_2.jpg" alt="Stigmates, vue 2">
+            </button>
+          </div>
+          <figcaption class="gallery-caption">
+            <p class="caption-title"><em>Stigmates</em>, 2018</p>
+            <p class="caption-desc">Anémones artificielles, clou, vase, eau</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="" alt="">
+          </button>
+        </figure>
+
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button">
+            <img src="" alt="">
+          </button>
+        </figure>
+
+      </div>
+
+      <p><a href="index.html">&larr; Retour à l'accueil</a></p>
+    </section>
+  </main>
+
+  <!-- ====== LIGHTBOX (affichage en grand d'une œuvre) ====== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Affichage de l'œuvre en grand">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fermer">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <!--<figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>-->
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Angélique Mangeleer</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
