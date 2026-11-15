@@ -8,7 +8,7 @@
   --line: #D9D4C6;
   --muted: #8B8674;
 
-  --font-display: "Poppins", sans-serif;
+  --font-display: "Fraunces", serif;
   --font-body: "Work Sans", sans-serif;
   --font-name: "Poppins", sans-serif; /* used only for the artist's name */
 
@@ -172,12 +172,12 @@ h1, h2, h3 {
   font-size: clamp(2.75rem, 8vw, 5.5rem);
   line-height: 1.02;
   letter-spacing: -0.01em;
-  /*max-width: 14ch;*/
+  max-width: 14ch;
 }
 
 .hero-caption {
   margin-top: 1.75rem;
-  /*max-width: 46ch;*/
+  max-width: 46ch;
   font-size: 1.1rem;
   color: var(--muted);
 }
@@ -461,6 +461,84 @@ h1, h2, h3 {
 .lightbox-close:hover,
 .lightbox-close:focus-visible {
   background: rgba(243, 241, 234, 0.12);
+}
+
+/* ===================================================
+   Page Activités de recherches
+=================================================== */
+.research-page h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 3rem;
+  max-width: 20ch;
+}
+
+.research-block {
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.research-block h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.research-block:last-of-type {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1.25rem;
+}
+
+.research-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none; /* hides default marker in Firefox */
+}
+
+.research-summary::marker {
+  content: ""; /* hides default marker in modern Chrome/Safari */
+}
+
+.research-summary::-webkit-details-marker {
+  display: none; /* hides default marker in Chrome/Safari */
+}
+
+.research-summary h2 {
+  margin: 0;
+}
+
+.research-summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  margin-left: 1.5rem;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: rotate(45deg); /* arrow pointing down, closed state */
+  transition: transform 0.2s ease;
+}
+
+.research-block[open] .research-summary::after {
+  transform: rotate(-135deg); /* arrow pointing up, open state */
+}
+
+.research-items {
+  list-style: none;
+  margin: 0;
+  margin-top: 1.25rem;
+  padding: 0;
+}
+
+.research-items li {
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.research-items li:last-child {
+  border-bottom: 1px solid var(--line);
 }
 
 /* ===================================================

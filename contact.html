@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Angélique Mangeleer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="header-name" href="index.html">Angélique Mangeleer</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="oeuvres.html">Œuvres</a>
+      <a href="recherche.html">Activités de recherches</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="section section-alt">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p class="section-intro">Une question, une proposition d'exposition ou de collaboration ? Écrivez-moi.</p>
+      </div>
+
+      <!--
+        Formulaire branché sur Formspree (https://formspree.io/f/mjywkjrn).
+        Pas de JavaScript ici : le navigateur envoie le formulaire directement
+        à Formspree, qui affiche ensuite sa propre page de confirmation.
+        Pour personnaliser ce qui se passe après l'envoi (ex. rediriger vers
+        une page de remerciement du site), voir la doc Formspree sur le champ
+        caché "_next" : https://help.formspree.io/hc/en-us/articles/360013470374
+      -->
+      <form class="contact-form" action="https://formspree.io/f/xdegenvn" method="POST">
+        <div class="field">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Envoyer le message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Angélique Mangeleer</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
