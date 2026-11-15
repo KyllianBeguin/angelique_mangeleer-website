@@ -8,7 +8,7 @@
   --line: #D9D4C6;
   --muted: #8B8674;
 
-  --font-display: "Fraunces", serif;
+  --font-display: "Poppins", sans-serif;
   --font-body: "Work Sans", sans-serif;
   --font-name: "Poppins", sans-serif; /* used only for the artist's name */
 
@@ -172,12 +172,12 @@ h1, h2, h3 {
   font-size: clamp(2.75rem, 8vw, 5.5rem);
   line-height: 1.02;
   letter-spacing: -0.01em;
-  max-width: 14ch;
+  /* max-width: 14ch; */
 }
 
 .hero-caption {
   margin-top: 1.75rem;
-  max-width: 46ch;
+  /* max-width: 46ch; */
   font-size: 1.1rem;
   color: var(--muted);
 }
